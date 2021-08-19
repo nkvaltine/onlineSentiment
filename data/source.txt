@@ -1,0 +1,2 @@
+Labeled data not kept in version control, but pulled from here:
+http://help.sentiment140.com/for-students
