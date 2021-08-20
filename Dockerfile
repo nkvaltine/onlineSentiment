@@ -11,4 +11,4 @@ COPY . .
 # EXPOSE 8501
 # CMD [ "streamlit", "run", "./dashboard/onlineSentiment.py"]
 
-CMD [ "streamlit", "run", "./dashboard/onlineSentiment.py", "--server.port $PORT" ]
+CMD streamlit run ./dashboard/onlineSentiment.py --server.port ${PORT}
