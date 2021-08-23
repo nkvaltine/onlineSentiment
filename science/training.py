@@ -31,7 +31,7 @@ tweets = pd.read_csv("../data/training.1600000.processed.noemoticon.csv",
                 encoding="latin-1")
 
 #temp, for dev
-tweets = tweets.sample(5000, random_state = 11)
+# tweets = tweets.sample(5000, random_state = 11)
 #%%
 
 #preprocess
@@ -88,16 +88,21 @@ labels = tweets['polarity']
 # grid = dict(solver=solvers,penalty=penalty,C=c_values)
 
 model = RandomForestClassifier()
-n_estimators = [20, 50, 100]
-max_features = ['auto', 'sqrt']
-max_depth = [30, 60, 90, 120]
-min_samples_split = [2, 5, 10]
-min_samples_leaf = [1, 2, 4]
 # n_estimators = [20]
 # max_features = ['auto']
 # max_depth = [30]
 # min_samples_split = [2]
 # min_samples_leaf = [1]
+    # n_estimators = [20, 50, 100]
+    # max_features = ['auto', 'sqrt']
+    # max_depth = [30, 60, 90, 120]
+    # min_samples_split = [2, 5, 10]
+    # min_samples_leaf = [1, 2, 4]
+n_estimators = [100, 150, 200]
+max_features = ['sqrt']
+max_depth = [120, 150]
+min_samples_split = [2, 5]
+min_samples_leaf = [2]
 
 grid = {
     'n_estimators' : n_estimators,
@@ -108,7 +113,7 @@ grid = {
 }
 
 # define grid search
-crossval = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+crossval = RepeatedStratifiedKFold(n_splits=8, n_repeats=3, random_state=1)
 grid_search = GridSearchCV(
     estimator=model, param_grid=grid, cv=crossval, \
     scoring='accuracy', error_score=0,  n_jobs=-1, \

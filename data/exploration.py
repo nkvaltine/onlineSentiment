@@ -58,7 +58,7 @@ temp2 = FreqDist(temp)
 temp2.plot(100,cumulative=False)
 #looks exponential, v. good!
 
-countlist = sorted(dict(t2).items(), key = lambda it: it[1], reverse = True)
+countlist = sorted(dict(temp2).items(), key = lambda it: it[1], reverse = True)
 countlist[:20]
 #it's punctuation and prepositions.  seems good.  let's check further down
 countlist[60:80]
