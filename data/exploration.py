@@ -2,14 +2,15 @@
 #It's not all inclusive, and is not really intended to be run outside of an interactive enrivonment
 
 #%%
-import pandas as pd
-import matplotlib.pyplot as plt
 
-from sklearn.feature_extraction.text import CountVectorizer
-import nltk
-from nltk import FreqDist
-from nltk import tokenize
-nltk.download('punkt')
+# import pandas as pd
+# import matplotlib.pyplot as plt
+
+# from sklearn.feature_extraction.text import CountVectorizer
+# import nltk
+# from nltk import FreqDist
+# from nltk import tokenize
+# nltk.download('punkt')
 
 #%%
 
