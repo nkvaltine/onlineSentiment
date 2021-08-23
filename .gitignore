@@ -131,3 +131,6 @@ dmypy.json
 
 #raw data
 *.csv
+
+#mac stuff
+.DS_Store
