@@ -129,8 +129,13 @@ dmypy.json
 .pyre/
 
 
+
+#my custom addons
 #raw data
 *.csv
 
 #mac stuff
 .DS_Store
+
+#vscode
+.vscode
