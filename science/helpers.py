@@ -2,7 +2,12 @@
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-#must add this to the Dockerfile
+
+#this is the stop a 'lazy loading' error that occurs the first time it runs (in docker, on web)
+wnl = WordNetLemmatizer()
+wnl.lemmatize('cats')
+
+#must download these in the Dockerfile
 #nltk.download('punkt')
 #nltk.download('stopwords')
 #nltk.download('wordnet')

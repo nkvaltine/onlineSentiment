@@ -6,7 +6,8 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 #get the nltk downloads used in helpers.py
-RUN python -m nltk.downloader punkt stopwords wordnet
+#must specify directory otherwise it won't be found.  there are other choices though
+RUN python -m nltk.downloader -d /usr/local/nltk_data punkt stopwords wordnet
 
 COPY . .
 
