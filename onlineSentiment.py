@@ -21,7 +21,7 @@ st.write("Enter text, up to 140 characters, that you'd like to know the sentimen
 st.write("Sorry, emojis will be ignored 😭")
 
 
-sentence = st.text_area('Input your text here:', "It was the best of times, it was the worst of times")
+sentence = st.text_area('Input your text here:', "Data science is great!")
 maxlen = 140
 if len(sentence) > maxlen:
     st.error(f"Input too long by {len(sentence) - maxlen} characters, please try again.")
