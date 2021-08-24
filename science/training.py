@@ -15,8 +15,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.model_selection import GridSearchCV
 
-from science import helpers
-token_lemma = helpers.token_lemma
+from helpers import token_lemma
 
 #%%
 #import and clean data

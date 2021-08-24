@@ -5,6 +5,7 @@ import pickle
 
 from science import classify
 import sys
+#idk what it is about the import system, but it never seems to just work
 sys.path.append("./science")
 from helpers import token_lemma
 
