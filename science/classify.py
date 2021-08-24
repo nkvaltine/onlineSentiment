@@ -18,4 +18,4 @@ class sentimenter(object):
         input['word_count'] = len(sentence)
 
         output = self.estimator.predict_proba(input)
-        return [round(output[0][0], 2), round(output[0][1], 2)]
+        return [output[0][0], output[0][1]]

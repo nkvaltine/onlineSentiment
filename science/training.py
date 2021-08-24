@@ -15,7 +15,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import RepeatedStratifiedKFold
 from sklearn.model_selection import GridSearchCV
 
-from helpers import token_lemma
+from science import helpers
+token_lemma = helpers.token_lemma
 
 #%%
 #import and clean data
@@ -27,7 +28,7 @@ tweets = pd.read_csv("../data/training.1600000.processed.noemoticon.csv",
 #for dev
 # tweets = tweets.sample(5000, random_state = 11)
 #for running, too much data otherwise 🙁
-tweets = tweets.sample(int(len(tweets)*0.002), random_state = 11)
+tweets = tweets.sample(int(len(tweets)*0.02), random_state = 11)
 #%%
 
 #preprocess
@@ -105,7 +106,8 @@ grid = {
 crossval = RepeatedStratifiedKFold(n_splits=8, n_repeats=3, random_state=1)
 grid_search = GridSearchCV(
     estimator=model, param_grid=grid, cv=crossval, \
-    scoring='accuracy', error_score=0,  n_jobs=-1, \
+    scoring='accuracy', error_score=0,  n_jobs=4, \
+    pre_dispatch="2*n_jobs",
     refit=True
     )
 grid_result = grid_search.fit(training_set, labels)
