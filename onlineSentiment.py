@@ -9,8 +9,8 @@ import sys
 sys.path.append("./science")
 from helpers import token_lemma
 
-loaded_model = pickle.load(open("./science/model_LR.pkl", 'rb'))
-loaded_vectorizer = pickle.load(open("./science/vectorizer_LR.pkl", 'rb'))
+loaded_model = pickle.load(open("./science/model.pkl", 'rb'))
+loaded_vectorizer = pickle.load(open("./science/vectorizer.pkl", 'rb'))
 
 
 model = classify.sentimenter(loaded_model, loaded_vectorizer)
